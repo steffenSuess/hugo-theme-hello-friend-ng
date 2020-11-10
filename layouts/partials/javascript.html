@@ -14,3 +14,46 @@
         <script src="{{ $val }}"></script>
     {{ end }}
 {{ end }}
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyAPR-p_Wx8-YjRYGoEvy4YYZ1Pzoi6ogJk",
+    authDomain: "homepage-3deb8.firebaseapp.com",
+    databaseURL: "https://homepage-3deb8.firebaseio.com",
+    projectId: "homepage-3deb8",
+    storageBucket: "homepage-3deb8.appspot.com",
+    messagingSenderId: "469472891976",
+    appId: "1:469472891976:web:2293e4bb0f1f332525b47d",
+    measurementId: "G-7KGZJVPPWM"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+<script>
+    var capturePost = function (name) {
+        console.log(name);
+        analytics.logEvent('view_item', {
+            name: name,
+        });
+    }
+</script>
+
+<script>
+    var captureSite = function (name) {
+        console.log(name);
+        analytics.logEvent('page_view', {
+            page_location: name,
+        });
+    }
+</script>
